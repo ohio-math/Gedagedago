@@ -1,4 +1,4 @@
 # Gedagedago
-Made by @ohio-math (Felix Schwiebert),
+Web-based proxy using service workers by @ohio-math (Felix Schwiebert),
 @krishangt (Krishang Thiyagarajan),
 @additionconceptualunderstanding (Sudeep Lanka)
