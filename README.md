@@ -1,5 +1,5 @@
 # Gedagedago
-Gedagedago is a web-based proxy using service workers by @ohio-math (Felix Schwiebert),
+Gedagedago is a WIP web-based proxy using service workers by @ohio-math (Felix Schwiebert),
 @krishangt (Krishang Thiyagarajan),
 @additionconceptualunderstanding (Sudeep Lanka).
 # How to use in your own website
