@@ -30,11 +30,11 @@ async function handle(event) {
   return () => fetch(newRequest);
 }
 
-/* self.addEventListener("activate", event => {
+self.addEventListener("activate", event => {
   event.waitUntil(async () => {
-    let isworking = 
+    await fetch(config.proxyServer); // Wake up proxy server
   });
-}); */
+});
 
 self.addEventListener("fetch", event => {
   event.respondWith(handle(event));
