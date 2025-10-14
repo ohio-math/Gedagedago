@@ -18,6 +18,6 @@ export class Proxy {
       return;
     }
 
-    window.location.href = url;
+    window.location.href = "./p.html";
   }
 }
