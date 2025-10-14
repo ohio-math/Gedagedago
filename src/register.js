@@ -7,17 +7,15 @@ function msg(m, box, debug) {
   }
 }
 
-export function registerSW(debug = false, messagearea = null) {
+export async function registerSW(debug = false, messagearea = null) {
   if ('serviceWorker' in navigator) {
     msg("Attempting to register service worker...", messagearea, debug);
-    navigator.serviceWorker.register("./sw.js", { scope: "/" })
-    .then(() => {
-      msg("Service worker successfully registered", messagearea, debug);
-    })
-    .then((error) => {
-      msg("Service worker registration failed", messagearea, debug);
-    });
-  
+    try {
+      await navigator.serviceWorker.register("./sw.js", { scope: "/" });
+      msg("Service worker registered successfully.", messagearea, debug);
+    } catch (error) {
+      msg("Service worker failed to register.", messagearea, debug);
+    }
   } else {
     msg("Service Workers are not supported in your browser. Your navigator is: " + navigator.userAgent, messagearea, debug);
   }
