@@ -6,7 +6,18 @@ export class Proxy {
     this.debug = settings.debug || false;
   }
 
-  register() {
-    registerSW(this.debug, this.message_area);
+  async register(url) {
+    await registerSW(this.debug, this.message_area);
+    
+    if (!/^http(s)?:\/\//.test(url)) {
+      url = "https://" + url;
+    }
+
+    if (!/^http(s)?:\/\/([a-zA-Z0-9_-]+\.)+[a-z0-9]+\/\S/.test(url)) {
+      console.log("Invalid url: " + url);
+      return;
+    }
+
+    window.location.href = url;
   }
 }
